@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-9756b": {
+      "hosting": {
+        "Hardware": [
+          "fir-9756b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-9756b"
+  }
+}

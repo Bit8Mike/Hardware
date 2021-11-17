@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Lista de Hardware</span>
+      <button class="btn btn-dark btn-lg float-right" routerLink="/add-hardware">Agregar</button>
+      <table *ngIf="hardware.length > 0" class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dataHardware of hardware">
+            <td>{{ dataHardware.nombre }}</td>
+            <td>{{ dataHardware.marca }}</td>
+            <td>{{ dataHardware.descripcion }}</td>
+            <td>{{ dataHardware.precio | currency }}</td>
+            <td><i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-hardware/', dataHardware.id]"></i></td>
+            <td><i (click)="deleteHardware(dataHardware.id)" class="fas fa-trash fa-lg text-danger"></i></td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 style="margin-top:30px;" *ngIf="hardware.length == 0">No hay registros en la base de datos</h5>
+    </div>
+  </div>
+</div>
